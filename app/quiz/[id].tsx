@@ -8,7 +8,7 @@ import {
   Alert,
 } from 'react-native';
 import { useLocalSearchParams, router } from 'expo-router';
-import { CheckCircle, XCircle, RotateCcw, Home, Award } from 'lucide-react-native';
+import { CircleCheck as CheckCircle, Circle as XCircle, RotateCcw, Chrome as Home, Award } from 'lucide-react-native';
 import { quizzes, saveQuizResult } from '../data/quizData';
 
 export default function QuizDetailScreen() {

@@ -8,7 +8,7 @@ import {
   Dimensions,
 } from 'react-native';
 import { router } from 'expo-router';
-import { Shield, Brain, Award, Users, ArrowRight, CheckCircle } from 'lucide-react-native';
+import { Shield, Brain, Award, Users, ArrowRight, CircleCheck as CheckCircle } from 'lucide-react-native';
 
 const { width } = Dimensions.get('window');
 

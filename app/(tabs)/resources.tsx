@@ -8,7 +8,7 @@ import {
   Linking,
   Alert,
 } from 'react-native';
-import { ExternalLink, Phone, Shield, FileText, AlertTriangle } from 'lucide-react-native';
+import { ExternalLink, Phone, Shield, FileText, TriangleAlert as AlertTriangle } from 'lucide-react-native';
 
 export default function ResourcesScreen() {
   const resources = [

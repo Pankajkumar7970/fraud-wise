@@ -8,7 +8,7 @@ import {
   FlatList,
 } from 'react-native';
 import { router } from 'expo-router';
-import { Shield, DollarSign, Trophy, Target, CheckCircle } from 'lucide-react-native';
+import { Shield, DollarSign, Trophy, Target, CircleCheck as CheckCircle } from 'lucide-react-native';
 import { quizzes, getCompletedQuizzesCount, getTotalScore } from '../data/quizData';
 
 export default function QuizzesScreen() {
