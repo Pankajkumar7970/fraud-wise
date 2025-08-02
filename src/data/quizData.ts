@@ -222,6 +222,142 @@ export const quizzes: Quiz[] = [
     ]
   },
   {
+    id: "ponzi-schemes",
+    title: "Ponzi Schemes",
+    description: "Understand how Ponzi schemes work and how to avoid them",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "What is the main characteristic of a Ponzi scheme?",
+        options: [
+          "High returns guaranteed by the government",
+          "New investor money pays earlier investors",
+          "Investments in legitimate government bonds",
+          "Returns backed by insurance"
+        ],
+        correctAnswer: 1,
+        explanation: "Ponzi schemes use money from new investors to pay returns to earlier investors, creating the illusion of a profitable investment."
+      },
+      {
+        id: 2,
+        question: "Why do Ponzi schemes eventually collapse?",
+        options: [
+          "Government regulation shuts them down",
+          "The organizer gets bored and quits",
+          "They run out of new investors to pay old ones",
+          "Market conditions change"
+        ],
+        correctAnswer: 2,
+        explanation: "Ponzi schemes require a constant flow of new investors. When recruitment slows, there isn't enough money to pay existing investors."
+      },
+      {
+        id: 3,
+        question: "What should you be suspicious of in an investment offer?",
+        options: [
+          "Detailed financial statements",
+          "Consistent returns regardless of market conditions",
+          "Licensed brokers handling your account",
+          "Written contracts and disclosures"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate investments fluctuate with market conditions. Consistent high returns regardless of market performance is a red flag."
+      },
+      {
+        id: 4,
+        question: "Who was Charles Ponzi?",
+        options: [
+          "A legitimate investor who created mutual funds",
+          "The criminal who gave his name to Ponzi schemes",
+          "A government regulator who stopped fraud",
+          "A bank president from the 1920s"
+        ],
+        correctAnswer: 1,
+        explanation: "Charles Ponzi was an Italian swindler who became infamous for using this technique in the early 1900s, giving the scheme its name."
+      },
+      {
+        id: 5,
+        question: "What's the best way to verify an investment opportunity?",
+        options: [
+          "Ask friends for their opinion",
+          "Check with regulatory authorities and research the company",
+          "Look at the website design quality",
+          "Trust the salesperson's credentials"
+        ],
+        correctAnswer: 1,
+        explanation: "Always verify investment opportunities with regulatory authorities like the SEC and research the company's background thoroughly."
+      }
+    ]
+  },
+  {
+    id: "pyramid-schemes",
+    title: "Pyramid Schemes",
+    description: "Learn to identify and avoid pyramid scheme recruitment tactics",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "What is the primary focus of a pyramid scheme?",
+        options: [
+          "Selling quality products to consumers",
+          "Recruiting new participants rather than selling products",
+          "Providing investment advice",
+          "Building legitimate business networks"
+        ],
+        correctAnswer: 1,
+        explanation: "Pyramid schemes focus primarily on recruiting new participants rather than selling legitimate products or services."
+      },
+      {
+        id: 2,
+        question: "How do participants typically make money in a pyramid scheme?",
+        options: [
+          "By selling products to consumers",
+          "By recruiting others and earning from their fees",
+          "Through salary from the company",
+          "From government subsidies"
+        ],
+        correctAnswer: 1,
+        explanation: "In pyramid schemes, participants make money primarily by recruiting others and earning a portion of their recruitment fees."
+      },
+      {
+        id: 3,
+        question: "What happens to most people who join pyramid schemes?",
+        options: [
+          "They become wealthy quickly",
+          "They break even on their investment",
+          "They lose their money",
+          "They get promoted to management"
+        ],
+        correctAnswer: 2,
+        explanation: "Mathematical reality means that the vast majority of pyramid scheme participants lose their money, with only those at the top profiting."
+      },
+      {
+        id: 4,
+        question: "What's a common recruitment tactic used by pyramid schemes?",
+        options: [
+          "Detailed business plans and profit projections",
+          "Emphasis on 'getting rich quick' and 'financial freedom'",
+          "Conservative return estimates",
+          "Government endorsements"
+        ],
+        correctAnswer: 1,
+        explanation: "Pyramid schemes often use emotional appeals about quick wealth and financial freedom to attract new recruits."
+      },
+      {
+        id: 5,
+        question: "How can you distinguish a legitimate MLM from a pyramid scheme?",
+        options: [
+          "MLMs have more colorful marketing materials",
+          "Legitimate MLMs focus on selling actual products to consumers",
+          "Pyramid schemes are always illegal, MLMs are not",
+          "MLMs require higher initial investments"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate multi-level marketing companies focus on selling real products to actual consumers, not just recruiting."
+      }
+    ]
+  },
+  {
     id: "investment-fraud",
     title: "Investment Fraud",
     description: "Recognize and avoid fraudulent investment schemes",
@@ -286,6 +422,618 @@ export const quizzes: Quiz[] = [
         ],
         correctAnswer: 1,
         explanation: "Legitimate investment opportunities don't require immediate decisions. Pressure tactics are red flags."
+      }
+    ]
+  },
+  {
+    id: "mortgage-fraud",
+    title: "Mortgage Fraud",
+    description: "Protect yourself from mortgage-related scams and fraud",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "What is a common mortgage rescue scam tactic?",
+        options: [
+          "Offering legitimate loan modifications",
+          "Promising to stop foreclosure for an upfront fee",
+          "Providing free credit counseling",
+          "Referring you to licensed attorneys"
+        ],
+        correctAnswer: 1,
+        explanation: "Mortgage rescue scammers often promise to stop foreclosure in exchange for upfront fees, then disappear with the money."
+      },
+      {
+        id: 2,
+        question: "What should you never do when contacted about mortgage assistance?",
+        options: [
+          "Ask for credentials and references",
+          "Pay upfront fees before services are provided",
+          "Consult with a HUD-approved counselor",
+          "Read all documents carefully"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate mortgage assistance providers don't require large upfront fees. Be wary of anyone demanding payment before providing services."
+      },
+      {
+        id: 3,
+        question: "Who should you contact for legitimate mortgage help?",
+        options: [
+          "Door-to-door solicitors",
+          "HUD-approved housing counseling agencies",
+          "Companies that contact you first",
+          "Social media advertisers"
+        ],
+        correctAnswer: 1,
+        explanation: "HUD-approved housing counseling agencies provide free or low-cost legitimate mortgage assistance and counseling."
+      },
+      {
+        id: 4,
+        question: "What's a red flag in mortgage advertising?",
+        options: [
+          "Detailed terms and conditions",
+          "Guarantees to stop foreclosure regardless of situation",
+          "Licensed professional credentials",
+          "References from previous clients"
+        ],
+        correctAnswer: 1,
+        explanation: "No legitimate service can guarantee to stop foreclosure regardless of your specific financial situation."
+      },
+      {
+        id: 5,
+        question: "If you're facing foreclosure, what's the first step?",
+        options: [
+          "Ignore the notices until the last minute",
+          "Contact your mortgage lender immediately",
+          "Pay the first company that offers help",
+          "Move out of your home"
+        ],
+        correctAnswer: 1,
+        explanation: "Contact your mortgage lender as soon as possible when facing difficulties. Many lenders offer legitimate assistance programs."
+      }
+    ]
+  },
+  {
+    id: "tax-scams",
+    title: "Tax Scams",
+    description: "Recognize and avoid tax-related fraud and scams",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "How does the IRS typically contact taxpayers about issues?",
+        options: [
+          "Through phone calls demanding immediate payment",
+          "Via email with urgent payment requests",
+          "Through the mail with official letters",
+          "Through text messages with payment links"
+        ],
+        correctAnswer: 2,
+        explanation: "The IRS initial contact is typically through official mail. They don't call or email demanding immediate payment."
+      },
+      {
+        id: 2,
+        question: "What payment methods does the IRS never accept?",
+        options: [
+          "Check or money order",
+          "Gift cards or prepaid debit cards",
+          "Direct bank transfer through official IRS payment system",
+          "Credit card through approved payment processors"
+        ],
+        correctAnswer: 1,
+        explanation: "The IRS never accepts gift cards, prepaid debit cards, or wire transfers as payment methods."
+      },
+      {
+        id: 3,
+        question: "What should you do if someone calls claiming to be from the IRS?",
+        options: [
+          "Provide your Social Security number to verify identity",
+          "Hang up and call the IRS directly using official numbers",
+          "Give them your bank account information",
+          "Pay immediately to avoid penalties"
+        ],
+        correctAnswer: 1,
+        explanation: "Hang up and contact the IRS directly using official phone numbers to verify any claimed issues."
+      },
+      {
+        id: 4,
+        question: "What's a common tax refund scam warning sign?",
+        options: [
+          "The refund amount matches your tax return",
+          "A refund much larger than expected",
+          "Receiving the refund through direct deposit",
+          "Having to wait several weeks for processing"
+        ],
+        correctAnswer: 1,
+        explanation: "Be suspicious of refunds that are much larger than you expected, as this could indicate identity theft or fraud."
+      },
+      {
+        id: 5,
+        question: "During tax season, what should you be most careful about?",
+        options: [
+          "Filing your taxes on time",
+          "Phishing emails claiming to be from the IRS",
+          "Using tax preparation software",
+          "Keeping organized records"
+        ],
+        correctAnswer: 1,
+        explanation: "Tax season brings increased phishing attempts with emails that appear to be from the IRS but are actually scams."
+      }
+    ]
+  },
+  {
+    id: "lottery-sweepstakes-fraud",
+    title: "Lottery/Sweepstakes Fraud",
+    description: "Identify fake lottery and sweepstakes scams",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "What's the biggest red flag in a lottery scam?",
+        options: [
+          "Winning a lottery you never entered",
+          "Having to pay taxes on winnings",
+          "Requiring photo ID to claim prizes",
+          "Needing to sign legal documents"
+        ],
+        correctAnswer: 0,
+        explanation: "You cannot win a legitimate lottery or sweepstakes that you never entered."
+      },
+      {
+        id: 2,
+        question: "What do lottery scammers typically ask for upfront?",
+        options: [
+          "Your mailing address for the check",
+          "Fees for taxes, processing, or insurance",
+          "Photo identification",
+          "Your signature on winner forms"
+        ],
+        correctAnswer: 1,
+        explanation: "Scammers ask for upfront fees claiming they're for taxes, processing, or insurance. Legitimate lotteries deduct taxes from winnings."
+      },
+      {
+        id: 3,
+        question: "How do legitimate lotteries handle taxes on winnings?",
+        options: [
+          "Winners must pay all taxes upfront",
+          "Taxes are deducted from the prize amount",
+          "Winners pay taxes to the lottery company",
+          "No taxes are required on lottery winnings"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate lotteries deduct taxes directly from your winnings before payment. You never pay taxes to win."
+      },
+      {
+        id: 4,
+        question: "What should you do if contacted about winning a foreign lottery?",
+        options: [
+          "Provide your bank account for direct deposit",
+          "Pay the required fees to claim your prize",
+          "Ignore it completely - it's illegal to play foreign lotteries",
+          "Ask for more details about the lottery"
+        ],
+        correctAnswer: 2,
+        explanation: "It's illegal for US residents to participate in foreign lotteries, so any such contact is definitely a scam."
+      },
+      {
+        id: 5,
+        question: "What's a legitimate way sweepstakes notify winners?",
+        options: [
+          "Through certified mail with official documentation",
+          "Via urgent phone calls demanding quick action",
+          "Through email requesting immediate payment",
+          "Text messages with payment links"
+        ],
+        correctAnswer: 0,
+        explanation: "Legitimate sweepstakes typically notify winners through certified mail with official documentation, not urgent phone calls or emails."
+      }
+    ]
+  },
+  {
+    id: "charity-scams",
+    title: "Charity Scams",
+    description: "Ensure your donations reach legitimate charitable organizations",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "When do charity scams typically increase?",
+        options: [
+          "During summer months",
+          "After natural disasters or tragedies",
+          "During presidential elections",
+          "At the beginning of the year"
+        ],
+        correctAnswer: 1,
+        explanation: "Charity scammers often exploit people's generosity after natural disasters, tragedies, or emergencies."
+      },
+      {
+        id: 2,
+        question: "How should you research a charity before donating?",
+        options: [
+          "Only look at their website",
+          "Check charity rating sites like Charity Navigator",
+          "Trust door-to-door solicitors",
+          "Base decisions on emotional appeals only"
+        ],
+        correctAnswer: 1,
+        explanation: "Use charity rating websites like Charity Navigator, GuideStar, or CharityWatch to research organizations before donating."
+      },
+      {
+        id: 3,
+        question: "What's a red flag when donating to charity?",
+        options: [
+          "Providing detailed financial information",
+          "Pressure to donate immediately",
+          "Accepting multiple payment methods",
+          "Sending thank you acknowledgments"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate charities don't pressure you to donate immediately. Take time to research before giving."
+      },
+      {
+        id: 4,
+        question: "What's the safest way to donate to charity?",
+        options: [
+          "Cash to door-to-door solicitors",
+          "Check or credit card to established charities",
+          "Wire transfer to foreign accounts",
+          "Gift cards as requested by callers"
+        ],
+        correctAnswer: 1,
+        explanation: "Donate by check or credit card to established, verified charities. Avoid cash donations or wire transfers."
+      },
+      {
+        id: 5,
+        question: "What should legitimate charities provide?",
+        options: [
+          "Promises that 100% goes directly to victims",
+          "Detailed information about their programs and finances",
+          "Guarantees of specific outcomes",
+          "Immediate tax deduction certificates"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate charities provide detailed information about their programs, how donations are used, and their financial management."
+      }
+    ]
+  },
+  {
+    id: "debt-relief-scams",
+    title: "Debt Relief Scams",
+    description: "Avoid fraudulent debt relief and credit repair services",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "What do debt relief scammers typically promise?",
+        options: [
+          "Gradual improvement over time",
+          "Complete elimination of all debt immediately",
+          "Negotiation with creditors",
+          "Credit counseling education"
+        ],
+        correctAnswer: 1,
+        explanation: "Debt relief scammers often promise immediate elimination of all debt, which is unrealistic and usually impossible."
+      },
+      {
+        id: 2,
+        question: "What should debt relief companies NOT ask for upfront?",
+        options: [
+          "Information about your debts",
+          "Large fees before providing any services",
+          "Contact information for creditors",
+          "Details about your income"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate debt relief companies cannot legally charge large upfront fees before providing services under federal law."
+      },
+      {
+        id: 3,
+        question: "What's a red flag in debt relief advertising?",
+        options: [
+          "Offering free initial consultations",
+          "Guaranteeing to eliminate debt regardless of situation",
+          "Explaining their fees clearly",
+          "Providing references from past clients"
+        ],
+        correctAnswer: 1,
+        explanation: "No legitimate service can guarantee to eliminate debt regardless of your specific financial situation."
+      },
+      {
+        id: 4,
+        question: "Where can you find legitimate debt counseling?",
+        options: [
+          "Cold callers who contact you first",
+          "HUD-approved credit counseling agencies",
+          "Social media advertisements",
+          "Door-to-door salespeople"
+        ],
+        correctAnswer: 1,
+        explanation: "HUD-approved credit counseling agencies provide legitimate, often free or low-cost debt counseling services."
+      },
+      {
+        id: 5,
+        question: "What's dangerous about debt relief scam advice?",
+        options: [
+          "They provide too much education",
+          "They advise stopping payments to creditors",
+          "They recommend budgeting",
+          "They suggest speaking with creditors"
+        ],
+        correctAnswer: 1,
+        explanation: "Scammers often advise stopping payments to creditors, which can damage your credit score and lead to legal action."
+      }
+    ]
+  },
+  {
+    id: "fake-check-scams",
+    title: "Fake Check Scams",
+    description: "Learn to identify counterfeit checks and related scams",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "What makes fake check scams particularly dangerous?",
+        options: [
+          "The checks always look obviously fake",
+          "Banks immediately detect fake checks",
+          "Fake checks can look very realistic",
+          "Only elderly people fall for them"
+        ],
+        correctAnswer: 2,
+        explanation: "Modern fake checks can look very realistic, making them difficult to detect without proper verification."
+      },
+      {
+        id: 2,
+        question: "In a typical fake check scam, what happens after you deposit the check?",
+        options: [
+          "You keep all the money",
+          "The bank immediately rejects it",
+          "You're asked to send some money back or buy gift cards",
+          "Nothing happens"
+        ],
+        correctAnswer: 2,
+        explanation: "Scammers typically ask you to send some money back or purchase gift cards after you deposit their fake check."
+      },
+      {
+        id: 3,
+        question: "How long can it take for a bank to discover a check is fake?",
+        options: [
+          "Immediately",
+          "Several days to weeks",
+          "Never - banks can't detect fake checks",
+          "Only if you report it"
+        ],
+        correctAnswer: 1,
+        explanation: "It can take days or even weeks for banks to discover a check is fake, during which time you might think the money is real."
+      },
+      {
+        id: 4,
+        question: "Who is responsible if you deposit a fake check?",
+        options: [
+          "The bank that accepted it",
+          "The person who gave you the check",
+          "You are responsible for the money",
+          "The government insurance"
+        ],
+        correctAnswer: 2,
+        explanation: "You are responsible for checks you deposit. If a check turns out to be fake, you owe the bank that money."
+      },
+      {
+        id: 5,
+        question: "What's the safest approach when receiving unexpected checks?",
+        options: [
+          "Deposit them immediately",
+          "Wait and verify the source independently",
+          "Cash them at check-cashing stores",
+          "Spend the money right away"
+        ],
+        correctAnswer: 1,
+        explanation: "Always verify unexpected checks independently by contacting the supposed issuer directly through official channels."
+      }
+    ]
+  },
+  {
+    id: "online-banking-fraud",
+    title: "Online Banking Fraud",
+    description: "Protect your online banking and financial accounts",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "What's the most important security feature for online banking?",
+        options: [
+          "Using the same password for all accounts",
+          "Two-factor authentication (2FA)",
+          "Banking only on public Wi-Fi",
+          "Saving passwords in browsers"
+        ],
+        correctAnswer: 1,
+        explanation: "Two-factor authentication adds an essential extra layer of security to protect your banking accounts."
+      },
+      {
+        id: 2,
+        question: "When should you be most suspicious of banking emails?",
+        options: [
+          "When they contain your account balance",
+          "When they ask you to click links to verify account info",
+          "When they come during business hours",
+          "When they include the bank's logo"
+        ],
+        correctAnswer: 1,
+        explanation: "Banks never ask you to click email links to verify account information. Always log in through the official website directly."
+      },
+      {
+        id: 3,
+        question: "What's unsafe about public Wi-Fi for banking?",
+        options: [
+          "It's too slow for banking websites",
+          "Others can potentially intercept your data",
+          "Banks block public Wi-Fi connections",
+          "It costs money to use"
+        ],
+        correctAnswer: 1,
+        explanation: "Public Wi-Fi networks can be insecure, allowing others to potentially intercept your banking information."
+      },
+      {
+        id: 4,
+        question: "How often should you check your bank statements?",
+        options: [
+          "Once a year",
+          "Only when you receive them in the mail",
+          "At least monthly, preferably more often",
+          "Only when you suspect problems"
+        ],
+        correctAnswer: 2,
+        explanation: "Check your bank statements at least monthly, or even weekly, to quickly identify any unauthorized transactions."
+      },
+      {
+        id: 5,
+        question: "What should you do immediately if you notice unauthorized transactions?",
+        options: [
+          "Wait to see if more appear",
+          "Contact your bank immediately",
+          "Try to figure out who did it yourself",
+          "Change your password and hope it stops"
+        ],
+        correctAnswer: 1,
+        explanation: "Contact your bank immediately when you notice unauthorized transactions. Quick action can limit your liability."
+      }
+    ]
+  },
+  {
+    id: "employment-fraud",
+    title: "Employment Fraud",
+    description: "Recognize and avoid job-related scams and fraudulent employers",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "What's a major red flag in job postings?",
+        options: [
+          "Detailed job descriptions",
+          "Vague job duties with promises of high pay",
+          "Requirements for specific skills",
+          "Company contact information"
+        ],
+        correctAnswer: 1,
+        explanation: "Be suspicious of job postings with vague descriptions but promises of unusually high pay for minimal work."
+      },
+      {
+        id: 2,
+        question: "What should legitimate employers NEVER ask for upfront?",
+        options: [
+          "Your resume and references",
+          "Payment for training materials or background checks",
+          "Your availability to start work",
+          "Examples of your previous work"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate employers never require you to pay for training materials, background checks, or other job-related expenses upfront."
+      },
+      {
+        id: 3,
+        question: "What's suspicious about a job interview process?",
+        options: [
+          "Meeting in the company's office",
+          "Conducting interviews only via text message",
+          "Asking about your experience",
+          "Requesting references"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate employers conduct proper interviews, not just text message conversations. Be wary of jobs offered without real interviews."
+      },
+      {
+        id: 4,
+        question: "How should you research potential employers?",
+        options: [
+          "Only look at their job posting",
+          "Check their website, reviews, and Better Business Bureau",
+          "Trust their promises about the company",
+          "Ask friends if they've heard of them"
+        ],
+        correctAnswer: 1,
+        explanation: "Research potential employers thoroughly through their official website, employee reviews, and Better Business Bureau ratings."
+      },
+      {
+        id: 5,
+        question: "What's a common work-from-home scam?",
+        options: [
+          "Remote customer service positions",
+          "Envelope stuffing or assembly work",
+          "Online tutoring jobs",
+          "Virtual assistant positions"
+        ],
+        correctAnswer: 1,
+        explanation: "Envelope stuffing and simple assembly work from home are classic scams that rarely provide the promised income."
+      }
+    ]
+  },
+  {
+    id: "student-loan-scams",
+    title: "Student Loan Scams",
+    description: "Protect yourself from fraudulent student loan services",
+    category: "fraud",
+    questions: [
+      {
+        id: 1,
+        question: "What do student loan scammers commonly promise?",
+        options: [
+          "Help with paperwork for a small fee",
+          "Immediate loan forgiveness for an upfront fee",
+          "Assistance understanding loan terms",
+          "Connections to legitimate servicers"
+        ],
+        correctAnswer: 1,
+        explanation: "Student loan scammers often promise immediate loan forgiveness in exchange for upfront fees, which is not how legitimate programs work."
+      },
+      {
+        id: 2,
+        question: "Where can you get FREE help with federal student loans?",
+        options: [
+          "Only through paid services",
+          "Federal Student Aid website and your loan servicer",
+          "Social media advertisements",
+          "Door-to-door representatives"
+        ],
+        correctAnswer: 1,
+        explanation: "The Federal Student Aid website (studentaid.gov) and your official loan servicer provide free assistance with federal student loans."
+      },
+      {
+        id: 3,
+        question: "What's a red flag in student loan relief offers?",
+        options: [
+          "Requiring official government forms",
+          "Guaranteeing loan forgiveness regardless of situation",
+          "Directing you to official government websites",
+          "Explaining program requirements clearly"
+        ],
+        correctAnswer: 1,
+        explanation: "No legitimate service can guarantee loan forgiveness regardless of your specific situation or loan type."
+      },
+      {
+        id: 4,
+        question: "How much should you pay for student loan assistance?",
+        options: [
+          "Whatever the company charges",
+          "Nothing - legitimate federal assistance is free",
+          "A percentage of your loan balance",
+          "Monthly fees until loans are resolved"
+        ],
+        correctAnswer: 1,
+        explanation: "Legitimate federal student loan assistance programs are free. You never need to pay for help with federal loan programs."
+      },
+      {
+        id: 5,
+        question: "What should you do if contacted about student loan services?",
+        options: [
+          "Sign up immediately to get help",
+          "Verify any claims through official federal resources",
+          "Provide your FSA ID for verification",
+          "Pay the fee to secure your spot"
+        ],
+        correctAnswer: 1,
+        explanation: "Always verify any student loan service claims through official federal resources like studentaid.gov before taking action."
       }
     ]
   },
@@ -423,6 +1171,210 @@ export const quizzes: Quiz[] = [
         ],
         correctAnswer: 2,
         explanation: "Starting early, even with small amounts, allows compound interest more time to work in your favor."
+      }
+    ]
+  },
+  {
+    id: "tax-planning",
+    title: "Tax Planning",
+    description: "Learn essential tax planning strategies for personal finance",
+    category: "financial",
+    questions: [
+      {
+        id: 1,
+        question: "What's the primary benefit of contributing to a traditional 401(k)?",
+        options: [
+          "Immediate tax-free withdrawals",
+          "Current year tax deduction",
+          "No taxes ever on the money",
+          "Higher investment returns"
+        ],
+        correctAnswer: 1,
+        explanation: "Traditional 401(k) contributions reduce your current year's taxable income, providing immediate tax benefits."
+      },
+      {
+        id: 2,
+        question: "When should you start planning for taxes?",
+        options: [
+          "Only during tax season",
+          "Throughout the year",
+          "Only when you receive tax documents",
+          "After you retire"
+        ],
+        correctAnswer: 1,
+        explanation: "Effective tax planning happens throughout the year, not just during tax season."
+      },
+      {
+        id: 3,
+        question: "What's a tax-advantaged way to save for healthcare expenses?",
+        options: [
+          "Regular savings account",
+          "Health Savings Account (HSA)",
+          "Checking account",
+          "Credit card rewards"
+        ],
+        correctAnswer: 1,
+        explanation: "HSAs offer triple tax advantages: deductible contributions, tax-free growth, and tax-free withdrawals for qualified medical expenses."
+      },
+      {
+        id: 4,
+        question: "What's the difference between tax deductions and tax credits?",
+        options: [
+          "There is no difference",
+          "Deductions reduce taxable income, credits reduce tax owed",
+          "Credits reduce taxable income, deductions reduce tax owed",
+          "Both work exactly the same way"
+        ],
+        correctAnswer: 1,
+        explanation: "Deductions reduce your taxable income, while credits directly reduce the amount of tax you owe dollar-for-dollar."
+      },
+      {
+        id: 5,
+        question: "What's important about keeping tax records?",
+        options: [
+          "Only keep them for one year",
+          "Keep important records for 3-7 years",
+          "Throw them away immediately after filing",
+          "Only keep them if you owe money"
+        ],
+        correctAnswer: 1,
+        explanation: "Keep important tax records for 3-7 years in case of audits or amendments, depending on the type of document."
+      }
+    ]
+  },
+  {
+    id: "debt-management",
+    title: "Debt Management",
+    description: "Learn effective strategies for managing and reducing debt",
+    category: "financial",
+    questions: [
+      {
+        id: 1,
+        question: "What's the 'debt snowball' method?",
+        options: [
+          "Pay minimum on all debts",
+          "Pay off smallest debts first while making minimums on others",
+          "Pay off highest interest rate debts first",
+          "Consolidate all debts into one payment"
+        ],
+        correctAnswer: 1,
+        explanation: "The debt snowball method focuses on paying off the smallest debts first to build momentum and motivation."
+      },
+      {
+        id: 2,
+        question: "What's the 'debt avalanche' method?",
+        options: [
+          "Pay off smallest debts first",
+          "Pay off highest interest rate debts first",
+          "Pay equal amounts on all debts",
+          "Only pay minimum payments"
+        ],
+        correctAnswer: 1,
+        explanation: "The debt avalanche method prioritizes paying off debts with the highest interest rates first to minimize total interest paid."
+      },
+      {
+        id: 3,
+        question: "What's a good debt-to-income ratio to maintain?",
+        options: [
+          "Below 36% for total debt",
+          "50% or higher is ideal",
+          "Debt-to-income doesn't matter",
+          "100% is acceptable"
+        ],
+        correctAnswer: 0,
+        explanation: "Financial experts generally recommend keeping your total debt-to-income ratio below 36%, with housing costs below 28%."
+      },
+      {
+        id: 4,
+        question: "When might debt consolidation be beneficial?",
+        options: [
+          "When you want to take on more debt",
+          "When you can get a lower interest rate",
+          "When you want to extend payment terms indefinitely",
+          "It's never beneficial"
+        ],
+        correctAnswer: 1,
+        explanation: "Debt consolidation can be beneficial when you can secure a lower interest rate or simplify payments, but requires discipline."
+      },
+      {
+        id: 5,
+        question: "What's the most important factor in getting out of debt?",
+        options: [
+          "Having perfect credit",
+          "Earning a high income",
+          "Creating and sticking to a budget",
+          "Using credit cards for everything"
+        ],
+        correctAnswer: 2,
+        explanation: "Creating and consistently following a realistic budget is the foundation of successful debt reduction, regardless of income level."
+      }
+    ]
+  },
+  {
+    id: "digital-payment-safety",
+    title: "Digital Payment Safety",
+    description: "Secure practices for online payments and digital wallets",
+    category: "financial",
+    questions: [
+      {
+        id: 1,
+        question: "What's the safest type of payment for online purchases?",
+        options: [
+          "Debit cards",
+          "Credit cards",
+          "Wire transfers",
+          "Cash payments"
+        ],
+        correctAnswer: 1,
+        explanation: "Credit cards offer better fraud protection and dispute resolution compared to debit cards for online purchases."
+      },
+      {
+        id: 2,
+        question: "What should you check before entering payment information online?",
+        options: [
+          "The website has lots of colors",
+          "The URL starts with 'https://' and shows a lock icon",
+          "The website loads quickly",
+          "There are many advertisements"
+        ],
+        correctAnswer: 1,
+        explanation: "Always ensure the website uses HTTPS encryption (lock icon) before entering payment information."
+      },
+      {
+        id: 3,
+        question: "What's a safe practice when using digital wallets?",
+        options: [
+          "Store all your payment methods",
+          "Use biometric authentication when available",
+          "Share your wallet password with family",
+          "Use public Wi-Fi for payments"
+        ],
+        correctAnswer: 1,
+        explanation: "Biometric authentication (fingerprint, face recognition) adds an extra layer of security to digital wallet access."
+      },
+      {
+        id: 4,
+        question: "How often should you review digital payment statements?",
+        options: [
+          "Once a year",
+          "Only when problems occur",
+          "At least monthly",
+          "Never - they're automated"
+        ],
+        correctAnswer: 2,
+        explanation: "Review all payment statements at least monthly to quickly identify any unauthorized transactions."
+      },
+      {
+        id: 5,
+        question: "What's the risk of using payment apps on public Wi-Fi?",
+        options: [
+          "Slower transaction speeds",
+          "Higher fees",
+          "Potential data interception by criminals",
+          "No risks - public Wi-Fi is safe"
+        ],
+        correctAnswer: 2,
+        explanation: "Public Wi-Fi networks can be insecure, potentially allowing criminals to intercept your payment information."
       }
     ]
   }
