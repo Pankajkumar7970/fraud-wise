@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Linking, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Phone, Shield, FileText, AlertTriangle, ExternalLink } from 'lucide-react-native';
+import { Phone, Shield, FileText, TriangleAlert as AlertTriangle, ExternalLink } from 'lucide-react-native';
 
 const ResourcesScreen = () => {
   const resources = [
