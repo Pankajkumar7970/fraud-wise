@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Shield, Brain, Award, ArrowRight, CheckCircle } from 'lucide-react-native';
+import { Shield, Brain, Award, ArrowRight, CircleCheck as CheckCircle } from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
