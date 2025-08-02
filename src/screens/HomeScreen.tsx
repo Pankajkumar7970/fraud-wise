@@ -21,7 +21,28 @@ const HomeScreen = () => {
     {
       icon: Award,
       title: "Track Progress",
-      description: "Earn badges, track scores, and monitor your learning progress across all quiz categories."
+      description: "Earn badges, track scores, and monitor your learning progress across all quiz categories with detailed analytics."
+    }
+  ];
+
+  const stats = [
+    {
+      icon: BookOpen,
+      number: "23+",
+      label: "Expert-Created Quizzes",
+      description: "Comprehensive coverage of fraud and financial topics"
+    },
+    {
+      icon: Users,
+      number: "10K+",
+      label: "Protected Users",
+      description: "Join thousands who've strengthened their knowledge"
+    },
+    {
+      icon: TrendingUp,
+      number: "95%",
+      label: "Success Rate",
+      description: "Users report feeling more confident about fraud detection"
     }
   ];
 
@@ -33,31 +54,54 @@ const HomeScreen = () => {
           <View style={styles.logoContainer}>
             <Shield size={48} color="#ffffff" />
           </View>
-          <Text style={styles.heroTitle}>Protect Yourself from Fraud</Text>
+          <Text style={styles.heroTitle}>Master Fraud Prevention & Financial Literacy</Text>
           <Text style={styles.heroSubtitle}>
-            Learn to identify scams, build financial literacy, and safeguard your money 
-            through interactive quizzes and expert guidance.
+            Build essential skills to protect your finances and make informed decisions. 
+            From basic budgeting to advanced fraud detection - we've got you covered.
           </Text>
+          
+          {/* Personal Progress Preview */}
+          {completedCount > 0 && (
+            <View style={styles.progressPreview}>
+              <Text style={styles.progressPreviewTitle}>Your Progress</Text>
+              <View style={styles.progressStats}>
+                <View style={styles.progressStat}>
+                  <Text style={styles.progressStatNumber}>{completedCount}</Text>
+                  <Text style={styles.progressStatLabel}>Completed</Text>
+                </View>
+                <View style={styles.progressStat}>
+                  <Text style={styles.progressStatNumber}>{averageScore}%</Text>
+                  <Text style={styles.progressStatLabel}>Avg Score</Text>
+                </View>
+              </View>
+            </View>
+          )}
+          
           <View style={styles.buttonContainer}>
             <TouchableOpacity 
               style={styles.primaryButton} 
               onPress={() => navigation.navigate('Quizzes' as never)}
             >
-              <Text style={styles.primaryButtonText}>Start Learning</Text>
+              <Text style={styles.primaryButtonText}>
+                {completedCount > 0 ? 'Continue Learning' : 'Start Learning'}
+              </Text>
               <ArrowRight size={20} color="#1a4b8c" />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.secondaryButton}>
-              <Text style={styles.secondaryButtonText}>Learn More</Text>
+            <TouchableOpacity 
+              style={styles.secondaryButton}
+              onPress={() => navigation.navigate('Resources' as never)}
+            >
+              <Text style={styles.secondaryButtonText}>View Resources</Text>
             </TouchableOpacity>
           </View>
         </View>
 
         {/* Features Section */}
         <View style={styles.featuresSection}>
-          <Text style={styles.sectionTitle}>Why Choose FraudWise?</Text>
+          <Text style={styles.sectionTitle}>Comprehensive Protection & Education</Text>
           <Text style={styles.sectionSubtitle}>
-            Comprehensive fraud awareness and financial literacy education designed 
-            to keep you and your money safe.
+            Our platform combines cutting-edge fraud detection education with practical 
+            financial literacy skills to give you complete protection.
           </Text>
           
           {features.map((feature, index) => {
@@ -75,18 +119,20 @@ const HomeScreen = () => {
         </View>
 
         {/* Statistics Section */}
-        <View style={styles.statsSection}>
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>$5.8B</Text>
-            <Text style={styles.statLabel}>Lost to fraud annually in the US</Text>
-          </View>
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>15+</Text>
-            <Text style={styles.statLabel}>Interactive quiz categories</Text>
-          </View>
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>100%</Text>
-            <Text style={styles.statLabel}>Free educational content</Text>
+        <View style={styles.statsContainer}>
+          <Text style={styles.statsTitle}>Trusted by Thousands</Text>
+          <View style={styles.statsGrid}>
+            {stats.map((stat, index) => {
+              const IconComponent = stat.icon;
+              return (
+                <View key={index} style={styles.statCard}>
+                  <IconComponent size={32} color="#1a4b8c" />
+                  <Text style={styles.statNumber}>{stat.number}</Text>
+                  <Text style={styles.statLabel}>{stat.label}</Text>
+                  <Text style={styles.statDescription}>{stat.description}</Text>
+                </View>
+              );
+            })}
           </View>
         </View>
 
@@ -94,22 +140,26 @@ const HomeScreen = () => {
         <View style={styles.ctaSection}>
           <Text style={styles.ctaTitle}>Ready to Protect Yourself?</Text>
           <Text style={styles.ctaSubtitle}>
-            Join thousands of users who have already strengthened their fraud 
-            awareness and financial knowledge.
+            Join our community of informed users who've taken control of their financial security.
+            Start with our beginner-friendly quizzes and work your way up to expert level.
           </Text>
           
           <View style={styles.benefitsList}>
             <View style={styles.benefitItem}>
               <CheckCircle size={16} color="#ffffff" />
-              <Text style={styles.benefitText}>Expert-created content</Text>
+              <Text style={styles.benefitText}>23+ comprehensive quizzes</Text>
             </View>
             <View style={styles.benefitItem}>
               <CheckCircle size={16} color="#ffffff" />
-              <Text style={styles.benefitText}>Real-world scenarios</Text>
+              <Text style={styles.benefitText}>Beginner to advanced levels</Text>
             </View>
             <View style={styles.benefitItem}>
               <CheckCircle size={16} color="#ffffff" />
-              <Text style={styles.benefitText}>Immediate feedback</Text>
+              <Text style={styles.benefitText}>Progress tracking & badges</Text>
+            </View>
+            <View style={styles.benefitItem}>
+              <CheckCircle size={16} color="#ffffff" />
+              <Text style={styles.benefitText}>100% free forever</Text>
             </View>
           </View>
 
@@ -117,7 +167,9 @@ const HomeScreen = () => {
             style={styles.ctaButton} 
             onPress={() => navigation.navigate('Quizzes' as never)}
           >
-            <Text style={styles.ctaButtonText}>Start Your First Quiz</Text>
+            <Text style={styles.ctaButtonText}>
+              {completedCount > 0 ? 'Continue Your Journey' : 'Start Your First Quiz'}
+            </Text>
             <ArrowRight size={20} color="#1a4b8c" />
           </TouchableOpacity>
         </View>
@@ -160,12 +212,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#1a4b8c',
     padding: 24,
     alignItems: 'center',
+    paddingBottom: 32,
   },
   logoContainer: {
     marginBottom: 16,
   },
   heroTitle: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#ffffff',
     textAlign: 'center',
@@ -175,8 +228,38 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#e5e7eb',
     textAlign: 'center',
-    marginBottom: 24,
+    marginBottom: 20,
     lineHeight: 24,
+  },
+  progressPreview: {
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 20,
+    width: '100%',
+  },
+  progressPreviewTitle: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: '600',
+    textAlign: 'center',
+    marginBottom: 12,
+  },
+  progressStats: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  progressStat: {
+    alignItems: 'center',
+  },
+  progressStatNumber: {
+    color: '#ffffff',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  progressStatLabel: {
+    color: '#e5e7eb',
+    fontSize: 12,
   },
   buttonContainer: {
     width: '100%',
@@ -211,7 +294,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   featuresSection: {
-    padding: 24,
+    paddingHorizontal: 24,
+    paddingVertical: 32,
   },
   sectionTitle: {
     fontSize: 24,
@@ -229,15 +313,15 @@ const styles = StyleSheet.create({
   },
   featureCard: {
     backgroundColor: '#ffffff',
-    padding: 20,
+    padding: 24,
     borderRadius: 12,
-    marginBottom: 16,
+    marginBottom: 20,
     alignItems: 'center',
     shadowColor: '#1a4b8c',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 6,
   },
   featureIconContainer: {
     marginBottom: 16,
@@ -255,25 +339,51 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 20,
   },
-  statsSection: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingVertical: 32,
+  statsContainer: {
     paddingHorizontal: 24,
+    paddingVertical: 32,
+    backgroundColor: '#f8fafc',
   },
-  statItem: {
+  statsTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#1f2937',
+    textAlign: 'center',
+    marginBottom: 24,
+  },
+  statsGrid: {
+    gap: 16,
+  },
+  statCard: {
+    backgroundColor: '#ffffff',
+    padding: 20,
+    borderRadius: 12,
     alignItems: 'center',
+    shadowColor: '#1a4b8c',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+    marginBottom: 16,
   },
   statNumber: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 'bold',
     color: '#1a4b8c',
-    marginBottom: 4,
+    marginVertical: 8,
   },
   statLabel: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#1f2937',
+    textAlign: 'center',
+    marginBottom: 4,
+  },
+  statDescription: {
     fontSize: 12,
     color: '#6b7280',
     textAlign: 'center',
+    lineHeight: 16,
   },
   ctaSection: {
     backgroundColor: '#1a4b8c',
@@ -296,7 +406,7 @@ const styles = StyleSheet.create({
   },
   benefitsList: {
     marginBottom: 24,
-    gap: 8,
+    gap: 12,
   },
   benefitItem: {
     flexDirection: 'row',
@@ -305,7 +415,8 @@ const styles = StyleSheet.create({
   },
   benefitText: {
     color: '#ffffff',
-    fontSize: 14,
+    fontSize: 15,
+    fontWeight: '500',
   },
   ctaButton: {
     backgroundColor: '#ffffff',
@@ -325,19 +436,25 @@ const styles = StyleSheet.create({
   navigationMenu: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 20,
+    paddingVertical: 24,
     backgroundColor: '#ffffff',
     borderTopWidth: 1,
     borderTopColor: '#e5e7eb',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
   },
   navItem: {
-    paddingVertical: 8,
-    paddingHorizontal: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
   },
   navItemText: {
     color: '#1a4b8c',
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '600',
   },
 });
 
