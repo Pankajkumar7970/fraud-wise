@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Shield, Brain, Award, ArrowRight, CheckCircle, BookOpen, Users, TrendingUp, Sparkles, Target, Zap } from 'lucide-react-native';
+import { Shield, Brain, Award, ArrowRight, CircleCheck as CheckCircle, BookOpen, Users, TrendingUp, Sparkles, Target, Zap } from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getUserProgress } from '../data/quizData';
 
