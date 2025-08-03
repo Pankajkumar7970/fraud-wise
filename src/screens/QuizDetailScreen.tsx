@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { CircleCheck as CheckCircle, Circle as XCircle, RotateCcw, Chrome as Home, Award } from 'lucide-react-native';
+import { CheckCircle, XCircle, RotateCcw, Home, Award, Zap, Target, Trophy, Sparkles } from 'lucide-react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { quizzes, saveQuizResult } from '../data/quizData';
 
@@ -79,9 +79,9 @@ const QuizDetailScreen = () => {
 
   const getScoreMessage = (score: number) => {
     const percentage = (score / quiz.questions.length) * 100;
-    if (percentage >= 80) return "Excellent! You're well-prepared to identify and avoid these threats.";
-    if (percentage >= 60) return "Good job! Review the explanations to strengthen your knowledge.";
-    return "Keep learning! Review the material and try again to improve your protection skills.";
+    if (percentage >= 80) return "🎉 Outstanding! You're a true expert at protecting yourself from these threats.";
+    if (percentage >= 60) return "👍 Great work! Review the explanations to master this topic completely.";
+    return "💪 Keep going! Every expert was once a beginner. Try again to build your skills.";
   };
 
   if (showResults) {
@@ -93,18 +93,36 @@ const QuizDetailScreen = () => {
         <ScrollView style={styles.scrollView}>
           <View style={styles.resultsContainer}>
             <View style={styles.resultsHeader}>
-              <Award size={64} color="#f59e0b" />
-              <Text style={styles.resultsTitle}>Quiz Completed!</Text>
+              <View style={styles.resultsIconContainer}>
+                {percentage >= 80 ? (
+                  <Trophy size={48} color="#f59e0b" />
+                ) : percentage >= 60 ? (
+                  <Target size={48} color="#6366f1" />
+                ) : (
+                  <Zap size={48} color="#10b981" />
+                )}
+                <Sparkles size={20} color="#fbbf24" style={styles.sparkleIcon} />
+              </View>
+              <Text style={styles.resultsTitle}>
+                {percentage >= 80 ? 'Excellent Work!' : 
+                 percentage >= 60 ? 'Great Progress!' : 'Keep Learning!'}
+              </Text>
               <View style={styles.scoreContainer}>
-                <View style={[styles.scoreBadge, styles.scoreBadgeSecondary]}>
-                  <Text style={styles.scoreBadgeText}>Score: {score}/{quiz.questions.length}</Text>
+                <View style={[styles.scoreBadge, { 
+                  backgroundColor: percentage >= 80 ? '#10b981' : 
+                                 percentage >= 60 ? '#6366f1' : '#f59e0b' 
+                }]}>
+                  <Text style={styles.scoreBadgeText}>{score}/{quiz.questions.length}</Text>
                 </View>
                 <View style={[
-                  styles.scoreBadge, 
-                  percentage >= 80 ? styles.scoreBadgeSuccess : 
-                  percentage >= 60 ? styles.scoreBadgeSecondary : styles.scoreBadgeError
+                  styles.percentageBadge,
+                  { backgroundColor: percentage >= 80 ? '#dcfce7' : 
+                                   percentage >= 60 ? '#e0e7ff' : '#fef3c7' }
                 ]}>
-                  <Text style={styles.scoreBadgeText}>{percentage}%</Text>
+                  <Text style={[styles.percentageText, {
+                    color: percentage >= 80 ? '#166534' : 
+                           percentage >= 60 ? '#3730a3' : '#92400e'
+                  }]}>{percentage}%</Text>
                 </View>
               </View>
             </View>
@@ -167,19 +185,25 @@ const QuizDetailScreen = () => {
       <ScrollView style={styles.scrollView}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.quizTitle}>{quiz.title}</Text>
-          <View style={styles.progressInfo}>
-            <Text style={styles.progressText}>
-              Question {currentQuestion + 1} of {quiz.questions.length}
-            </Text>
-            <View style={styles.categoryBadge}>
-              <Text style={styles.categoryBadgeText}>
-                {quiz.category === "fraud" ? "Fraud Awareness" : "Financial Literacy"}
+          <View style={styles.headerGradient}>
+            <Text style={styles.quizTitle}>{quiz.title}</Text>
+            <View style={styles.progressInfo}>
+              <Text style={styles.progressText}>
+                Question {currentQuestion + 1} of {quiz.questions.length}
               </Text>
+              <View style={[styles.categoryBadge, 
+                quiz.category === "fraud" ? styles.fraudCategoryBadge : styles.financialCategoryBadge
+              ]}>
+                <Text style={[styles.categoryBadgeText,
+                  quiz.category === "fraud" ? styles.fraudCategoryText : styles.financialCategoryText
+                ]}>
+                  {quiz.category === "fraud" ? "Fraud Protection" : "Financial Mastery"}
+                </Text>
+              </View>
             </View>
-          </View>
-          <View style={styles.progressBar}>
-            <View style={[styles.progressFill, { width: `${progress}%` }]} />
+            <View style={styles.progressBar}>
+              <View style={[styles.progressFill, { width: `${progress}%` }]} />
+            </View>
           </View>
         </View>
 
@@ -274,18 +298,24 @@ const QuizDetailScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f9fafb',
+    backgroundColor: '#f8fafc',
   },
   scrollView: {
     flex: 1,
   },
   header: {
+    overflow: 'hidden',
+  },
+  headerGradient: {
+    backgroundColor: '#6366f1',
+    background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
     padding: 24,
+    paddingBottom: 32,
   },
   quizTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#1f2937',
+    fontSize: 24,
+    fontWeight: '800',
+    color: '#ffffff',
     marginBottom: 12,
   },
   progressInfo: {
@@ -296,256 +326,316 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 14,
-    color: '#6b7280',
+    color: 'rgba(255, 255, 255, 0.9)',
+    fontWeight: '500',
   },
   categoryBadge: {
-    backgroundColor: '#f3f4f6',
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#d1d5db',
+  },
+  fraudCategoryBadge: {
+    backgroundColor: 'rgba(239, 68, 68, 0.2)',
+  },
+  financialCategoryBadge: {
+    backgroundColor: 'rgba(16, 185, 129, 0.2)',
   },
   categoryBadgeText: {
     fontSize: 12,
-    color: '#6b7280',
+    fontWeight: '600',
+  },
+  fraudCategoryText: {
+    color: '#fca5a5',
+  },
+  financialCategoryText: {
+    color: '#6ee7b7',
   },
   progressBar: {
     height: 8,
-    backgroundColor: '#e5e7eb',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderRadius: 4,
     overflow: 'hidden',
   },
   progressFill: {
     height: '100%',
-    backgroundColor: '#1a4b8c',
+    backgroundColor: '#ffffff',
+    shadowColor: '#ffffff',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
   },
   questionCard: {
     backgroundColor: '#ffffff',
     margin: 24,
-    padding: 20,
-    borderRadius: 12,
-    shadowColor: '#1a4b8c',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    marginTop: -16,
+    padding: 24,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.15,
+    shadowRadius: 16,
+    elevation: 8,
   },
   questionText: {
-    fontSize: 18,
-    fontWeight: '600',
+    fontSize: 19,
+    fontWeight: '700',
     color: '#1f2937',
-    marginBottom: 20,
-    lineHeight: 26,
+    marginBottom: 24,
+    lineHeight: 28,
   },
   optionsContainer: {
-    gap: 12,
+    gap: 16,
   },
   optionButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16,
+    padding: 18,
     borderWidth: 1,
-    borderColor: '#d1d5db',
-    borderRadius: 8,
+    borderColor: '#e5e7eb',
+    borderRadius: 16,
     backgroundColor: '#ffffff',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 2,
   },
   selectedOption: {
-    backgroundColor: '#1a4b8c',
-    borderColor: '#1a4b8c',
+    backgroundColor: '#6366f1',
+    borderColor: '#6366f1',
+    shadowColor: '#6366f1',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
   },
   disabledOption: {
     opacity: 0.6,
   },
   optionLabel: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
     color: '#1f2937',
     marginRight: 12,
-    minWidth: 24,
+    minWidth: 28,
   },
   optionText: {
     fontSize: 16,
     color: '#1f2937',
     flex: 1,
-    lineHeight: 22,
+    lineHeight: 24,
+    fontWeight: '500',
   },
   selectedOptionText: {
     color: '#ffffff',
+    fontWeight: '600',
   },
   explanationCard: {
     backgroundColor: '#ffffff',
     marginHorizontal: 24,
     marginBottom: 24,
-    padding: 20,
-    borderRadius: 12,
-    shadowColor: '#1a4b8c',
-    shadowOffset: { width: 0, height: 2 },
+    padding: 24,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    shadowRadius: 12,
+    elevation: 4,
   },
   explanationHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 16,
     gap: 8,
   },
   explanationResult: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
   },
   correctResult: {
-    color: '#22c55e',
+    color: '#10b981',
   },
   incorrectResult: {
     color: '#ef4444',
   },
   explanationText: {
-    fontSize: 14,
+    fontSize: 15,
     color: '#6b7280',
-    lineHeight: 20,
-    marginBottom: 8,
+    lineHeight: 22,
+    marginBottom: 12,
   },
   correctAnswerText: {
-    fontSize: 14,
-    color: '#22c55e',
-    lineHeight: 20,
+    fontSize: 15,
+    color: '#10b981',
+    lineHeight: 22,
+    fontWeight: '500',
   },
   actionButtons: {
     flexDirection: 'row',
     paddingHorizontal: 24,
     paddingBottom: 24,
-    gap: 12,
+    gap: 16,
   },
   primaryButton: {
     flex: 1,
-    backgroundColor: '#1a4b8c',
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    borderRadius: 8,
+    backgroundColor: '#6366f1',
+    paddingVertical: 18,
+    paddingHorizontal: 24,
+    borderRadius: 16,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
     gap: 8,
+    shadowColor: '#6366f1',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
   },
   primaryButtonText: {
     color: '#ffffff',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
   },
   secondaryButton: {
     flex: 1,
     backgroundColor: '#ffffff',
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    borderRadius: 8,
+    paddingVertical: 18,
+    paddingHorizontal: 24,
+    borderRadius: 16,
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#e5e7eb',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
     gap: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 2,
   },
   secondaryButtonText: {
-    color: '#1a4b8c',
+    color: '#6366f1',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
   },
   disabledButton: {
-    opacity: 0.5,
+    opacity: 0.6,
   },
   resultsContainer: {
-    padding: 24,
+    padding: 32,
   },
   resultsHeader: {
     alignItems: 'center',
-    marginBottom: 24,
+    marginBottom: 32,
+    position: 'relative',
+  },
+  resultsIconContainer: {
+    position: 'relative',
+    marginBottom: 20,
+  },
+  sparkleIcon: {
+    position: 'absolute',
+    top: -8,
+    right: -8,
   },
   resultsTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 28,
+    fontWeight: '800',
     color: '#1f2937',
-    marginVertical: 16,
+    marginBottom: 20,
+    textAlign: 'center',
   },
   scoreContainer: {
     flexDirection: 'row',
-    gap: 12,
+    gap: 16,
+    alignItems: 'center',
   },
   scoreBadge: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 4,
   },
-  scoreBadgeSecondary: {
-    backgroundColor: '#f3f4f6',
-  },
-  scoreBadgeSuccess: {
-    backgroundColor: '#dcfce7',
-  },
-  scoreBadgeError: {
-    backgroundColor: '#fee2e2',
+  percentageBadge: {
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 24,
   },
   scoreBadgeText: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#1f2937',
+    fontSize: 18,
+    fontWeight: '800',
+    color: '#ffffff',
+  },
+  percentageText: {
+    fontSize: 18,
+    fontWeight: '800',
   },
   resultsContent: {
     backgroundColor: '#ffffff',
-    padding: 20,
-    borderRadius: 12,
-    shadowColor: '#1a4b8c',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    padding: 24,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.15,
+    shadowRadius: 16,
+    elevation: 8,
   },
   scoreMessage: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#6b7280',
     textAlign: 'center',
-    marginBottom: 24,
-    lineHeight: 20,
+    marginBottom: 32,
+    lineHeight: 24,
+    fontWeight: '500',
   },
   reviewSection: {
-    marginBottom: 24,
+    marginBottom: 32,
   },
   reviewTitle: {
-    fontSize: 16,
-    fontWeight: '600',
+    fontSize: 18,
+    fontWeight: '700',
     color: '#1f2937',
-    marginBottom: 16,
+    marginBottom: 20,
   },
   reviewItem: {
     borderWidth: 1,
-    borderColor: '#e5e7eb',
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 12,
+    borderColor: '#f1f5f9',
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 16,
+    backgroundColor: '#fafbfc',
   },
   reviewHeader: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    gap: 8,
+    gap: 12,
   },
   reviewContent: {
     flex: 1,
   },
   reviewQuestion: {
-    fontSize: 14,
-    fontWeight: '500',
+    fontSize: 15,
+    fontWeight: '600',
     color: '#1f2937',
-    marginBottom: 4,
+    marginBottom: 8,
+    lineHeight: 22,
   },
   reviewAnswer: {
-    fontSize: 12,
+    fontSize: 13,
     color: '#6b7280',
-    marginBottom: 2,
+    marginBottom: 4,
+    fontWeight: '500',
   },
   reviewCorrect: {
-    fontSize: 12,
-    color: '#22c55e',
+    fontSize: 13,
+    color: '#10b981',
+    fontWeight: '600',
   },
 });
 
