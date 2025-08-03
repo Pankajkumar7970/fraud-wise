@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { CheckCircle, XCircle, RotateCcw, Home, Award, Zap, Target, Trophy, Sparkles } from 'lucide-react-native';
+import { CircleCheck as CheckCircle, Circle as XCircle, RotateCcw, Chrome as Home, Award, Zap, Target, Trophy, Sparkles } from 'lucide-react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { quizzes, saveQuizResult } from '../data/quizData';
 
